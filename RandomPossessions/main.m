@@ -30,7 +30,7 @@ int main(int argc, const char * argv[])
         for (int i = 0; i < [items count]; i++) {
             // We get the ith object from the array and pass it as an argument to
             // NSLog, which implicitly sends the description message to that object
-            NSLog(@"%@", [items objectAtIndex:i]);
+            NSLog(@"%@ david is cool", [items objectAtIndex:i]);
         }
         
         BNRItem *p = [[BNRItem alloc]init];
