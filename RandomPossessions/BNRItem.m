@@ -15,16 +15,23 @@
     // Call the superclass's designated initializer
     self = [super init];
     
+    // Did the superclass's designated initializer succeed?
+    if (self)   {
     // Give the instance variables initial values
-    [self setItemName:name];
-    [self setSerialNumber:sNumber];
-    [self setValueInDollars:value];
-    dateCreated = [[NSDate alloc]init];
+        [self setItemName:name];
+        [self setSerialNumber:sNumber];
+        [self setValueInDollars:value];
+        dateCreated = [[NSDate alloc]init];
+    }
     
     // Return the address of the newly initialized object
     return self;
 }
 
+- (id)init
+{
+    return [self initWithItemName:@"item" valueInDollars:0 serialNumber:@""];
+}
 
 
 
