@@ -10,6 +10,25 @@
 
 @implementation BNRItem
 
+- (id)initWithItemName:(NSString *)name valueInDollars:(int)value serialNumber:(NSString *)sNumber
+{
+    // Call the superclass's designated initializer
+    self = [super init];
+    
+    // Give the instance variables initial values
+    [self setItemName:name];
+    [self setSerialNumber:sNumber];
+    [self setValueInDollars:value];
+    dateCreated = [[NSDate alloc]init];
+    
+    // Return the address of the newly initialized object
+    return self;
+}
+
+
+
+
+
 - (void)setItemName:(NSString *)str
 {
     itemName = str;
