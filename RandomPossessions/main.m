@@ -30,11 +30,22 @@ int main(int argc, const char * argv[])
         for (int i = 0; i < [items count]; i++) {
             // We get the ith object from the array and pass it as an argument to
             // NSLog, which implicitly sends the description message to that object
-            NSLog(@"%@ david is cool", [items objectAtIndex:i]);
+            NSLog(@"%@", [items objectAtIndex:i]);
         }
         
         BNRItem *p = [[BNRItem alloc]init];
-        NSLog(@"%@ %@ %@ %d", [p itemName], [p dateCreated], [p serialNumber], [p valueInDollars]);
+        // This creates a new NSString, "Red Sofa" and gives it to the BNRItem
+        [p setItemName:@"Red Sofa"];
+        
+        // This creates a new NSString, "A1B2C" and gives it to the BNRItem
+        [p setSerialNumber:@"A1B2C"];
+        
+        // We send the value 100 to be used as the valueInDollars of this BNRItem
+        [p setValueInDollars:100];
+        
+       // Remember, an NSLog with %@ as the token will print the description
+        // of the corresponding arguement
+        NSLog(@"%@",p);
         
         // Destroy the array pointed to by items
         items = nil;

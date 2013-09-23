@@ -44,4 +44,20 @@
     return dateCreated;
 }
 
+- (NSString *)description
+{
+    NSString *descriptionString =
+    [[NSString alloc]initWithFormat:@"%@(%@):Worth $%D, recorded on %@",
+     itemName, serialNumber, valueInDollars, dateCreated];
+    
+    return descriptionString;
+}
+
+
+
+
+
+
+
+
 @end
