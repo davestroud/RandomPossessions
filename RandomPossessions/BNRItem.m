@@ -10,7 +10,9 @@
 
 @implementation BNRItem
 
-- (id)initWithItemName:(NSString *)name valueInDollars:(int)value serialNumber:(NSString *)sNumber
+- (id)initWithItemName:(NSString *)name
+        valueInDollars:(int)value
+          serialNumber:(NSString *)sNumber
 {
     // Call the superclass's designated initializer
     self = [super init];
@@ -30,11 +32,19 @@
 
 - (id)init
 {
-    return [self initWithItemName:@"item" valueInDollars:0 serialNumber:@""];
+    return [self initWithItemName:@"item"
+                   valueInDollars:0
+                     serialNumber:@""];
 }
 
-
-
+- (NSString *)description
+{
+    NSString *descriptionString =
+    [[NSString alloc]initWithFormat:@"%@(%@):Worth $%D, recorded on %@",
+     itemName, serialNumber, valueInDollars, dateCreated];
+    
+    return descriptionString;
+}
 
 - (void)setItemName:(NSString *)str
 {
@@ -69,21 +79,5 @@
 {
     return dateCreated;
 }
-
-- (NSString *)description
-{
-    NSString *descriptionString =
-    [[NSString alloc]initWithFormat:@"%@(%@):Worth $%D, recorded on %@",
-     itemName, serialNumber, valueInDollars, dateCreated];
-    
-    return descriptionString;
-}
-
-
-
-
-
-
-
 
 @end
